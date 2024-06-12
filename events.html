@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTS</title>
+</head>
+
+<body>
+    <script>
+
+        var body = document.body;
+
+        var h2 = document.createElement("h2");
+        h2.innerText = "--------COLOR CHANGING TEXT BASED ON CLICKS--------";
+        h2.style.textAlign = "center";
+        body.appendChild(h2);
+        console.log(h2);
+
+        var h1 = document.createElement("h1");
+        h1.innerText = "CLICK ME";
+        h1.style.textAlign = "center";
+        h1.style.cursor = "pointer";
+        body.appendChild(h1);
+        console.log(h1);
+
+        h1.addEventListener("click", function () {
+            h1.style.color = "red";
+        });
+        h1.addEventListener("dblclick", function () {
+            h1.style.color = "";
+        });
+
+        var count = 0;
+        function hello() {
+            count++;
+            if (count % 2 != 0) {
+                h1.style.color = "red";
+            }
+            else {
+                h1.style.color = "";
+            }
+        }
+        h1.addEventListener("click", hello);
+
+        var h2Mouse = document.createElement("h2");
+        h2Mouse.innerText = "--------IMG DISPLAY BASED ON MOUSE ACTION--------";
+        h2Mouse.style.textAlign = "center";
+        body.appendChild(h2Mouse);
+        console.log(h2Mouse);
+
+        var mainDiv = document.createElement("div");
+        mainDiv.style.display = "flex";
+        mainDiv.style.justifyContent = "center";
+        mainDiv.style.alignItems = "flex-start";
+        mainDiv.style.gap = "10px";
+        mainDiv.style.height = "330px";
+        body.appendChild(mainDiv);
+
+        var Div = document.createElement("div");
+        Div.style.display = "flex";
+        Div.style.flexDirection = "column";
+        Div.style.gap = "5px";
+        mainDiv.appendChild(Div);
+
+        var img1 = document.createElement("img");
+        img1.setAttribute("src", "https://th.bing.com/th/id/OIP.25vSXGJsvi1u3JIjcfvfNQAAAA?w=289&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7");
+        img1.style.width = "220px";
+        img1.style.height = "150px";
+        img1.style.cursor = "pointer";
+        Div.appendChild(img1);
+
+        var img2 = document.createElement("img");
+        img2.setAttribute("src", "https://th.bing.com/th/id/OIP.tAvAD5lCtDJSjywplxd37QHaEo?w=282&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7");
+        img2.style.width = "220px";
+        img2.style.height = "150px";
+        img2.style.cursor = "pointer";
+        Div.appendChild(img2);
+
+        var img3 = document.createElement("img");
+        img3.setAttribute("src", "https://www.bing.com/th/id/OGC.ba9ca1e81caf80f5540516e4e20df473?pid=1.7&rurl=https%3a%2f%2fwww.vkreate.in%2fstorage%2fservices_image%2f2019-10-02-17-55-54-5d94e4aa809b3-web-development.gif&ehk=bscThsWP2KdWQhJSkyMbMC9msO0SYzY0N3sK4kZpYhw%3d");
+        img3.style.width = "420px";
+        img3.style.height = "310px";
+        img3.style.boxShadow = "0px 4px 12px 0px black"
+        mainDiv.appendChild(img3);
+
+        img1.addEventListener("mouseover", function () {
+            img3.setAttribute("src", "https://th.bing.com/th/id/OIP.25vSXGJsvi1u3JIjcfvfNQAAAA?w=289&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7");
+        });
+
+        img2.addEventListener("mouseover", function () {
+            img3.setAttribute("src", "https://th.bing.com/th/id/OIP.tAvAD5lCtDJSjywplxd37QHaEo?w=282&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7");
+        });
+
+        img1.addEventListener("mouseout", function () {
+            img3.setAttribute("src", "https://www.bing.com/th/id/OGC.ba9ca1e81caf80f5540516e4e20df473?pid=1.7&rurl=https%3a%2f%2fwww.vkreate.in%2fstorage%2fservices_image%2f2019-10-02-17-55-54-5d94e4aa809b3-web-development.gif&ehk=bscThsWP2KdWQhJSkyMbMC9msO0SYzY0N3sK4kZpYhw%3d");
+        });
+
+        img2.addEventListener("mouseout", function () {
+            img3.setAttribute("src", "https://www.bing.com/th/id/OGC.ba9ca1e81caf80f5540516e4e20df473?pid=1.7&rurl=https%3a%2f%2fwww.vkreate.in%2fstorage%2fservices_image%2f2019-10-02-17-55-54-5d94e4aa809b3-web-development.gif&ehk=bscThsWP2KdWQhJSkyMbMC9msO0SYzY0N3sK4kZpYhw%3d");
+        });
+
+        var h2chk = document.createElement("h2");
+        h2chk.innerText = "--------IMG DISPLAY BASED ON RADIO CHECKBOX--------";
+        h2chk.style.textAlign = "center";
+        body.appendChild(h2chk);
+        console.log(h2chk);
+
+    </script>
+    <form action="">
+        <input type="radio" class="chk1" name="chkbox">
+        <label for="radio">chat</label> <br>
+        <input type="radio" class="chk2" name="chkbox">
+        <label for="radio">pani-puri</label>
+    </form>
+
+    <script>
+        var chkDiv = document.createElement("div");
+        chkDiv.style.display = "inline-block";
+        var chkImg = document.createElement("img");
+        chkImg.setAttribute("src", "https://wallpapercave.com/wp/wp6903417.jpg");
+        chkImg.style.width = "320px";
+        chkImg.style.border = "2px solid red";
+        chkImg.style.height = "280px";
+        chkImg.style.marginTop = "-50px";
+        chkImg.style.marginLeft = "150px";
+        chkDiv.appendChild(chkImg);
+        body.appendChild(chkDiv);
+
+        console.log(document);
+
+        var a = document.getElementsByClassName("chk1");
+        a[0].addEventListener("click", function () {
+            chkImg.setAttribute("src", "https://images.herzindagi.info/image/2019/Aug/bhelpuri-at-home.jpg");
+        })
+        var b = document.getElementsByClassName("chk2");
+        b[0].addEventListener("click", function () {
+            chkImg.setAttribute("src", "https://img.theculturetrip.com/1440x/smart/wp-content/uploads/2016/04/pani_puri1.jpg");
+        })
+    </script>
+</body>
+
+</html>
